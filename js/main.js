@@ -1,5 +1,5 @@
 // Конфигурация API
-const API_BASE_URL = 'http://exam-api-courses.std-900.ist.mospolytech.ru/api';
+const API_BASE_URL = 'https://exam-api-courses.std-900.ist.mospolytech.ru/api';
 const API_KEY = '995a4b68-17ad-4fd0-922c-d070d530e9a9';
 
 // Глобальные переменные

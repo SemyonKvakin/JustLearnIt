@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustLearnIt - Языковая школа</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="bg-primary text-white py-3">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand fs-3 fw-bold" href="index.html">
+                        📚 JustLearnIt
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#courses">Курсы</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#tutors">Репетиторы</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#map">Ресурсы</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="account.html">Личный кабинет</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Область уведомлений -->
+    <div class="container mt-3">
+        <div id="notification-area"></div>
+    </div>
+
+    <!-- Описание школы -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold">Добро пожаловать в JustLearnIt</h1>
+                <p class="lead text-muted">Изучайте иностранные языки с лучшими преподавателями</p>
+            </div>
+            
+            <div class="row text-center mb-4">
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Качественное обучение</h3>
+                            <p class="card-text">Опытные преподаватели с международными сертификатами</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Гибкий график</h3>
+                            <p class="card-text">Занятия в удобное для вас время, включая выходные</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">Доступные цены</h3>
+                            <p class="card-text">Скидки при групповой записи и ранней регистрации</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Преимущества изучения языка -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">Преимущества изучения иностранных языков</h2>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="p-3">
+                        <h5>🌍 Глобальный язык</h5>
+                        <p>Расширьте возможности общения с людьми по всему миру</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="p-3">
+                        <h5>🎨 Богатая культура</h5>
+                        <p>Погрузитесь в литературу, искусство и историю других стран</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="p-3">
+                        <h5>💼 Карьерные возможности</h5>
+                        <p>Откройте новые перспективы в международном бизнесе</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Курсы -->
+    <section id="courses" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Предлагаемые курсы</h2>
+            
+            <!-- Форма поиска курсов -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Поиск курсов</h5>
+                    <div class="row">
+                        <div class="col-md-8 mb-3">
+                            <input type="text" class="form-control" id="course-search-name" placeholder="Название курса">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <select class="form-select" id="course-search-level">
+                                <option value="">Все уровни</option>
+                                <option value="Beginner">Начальный</option>
+                                <option value="Intermediate">Средний</option>
+                                <option value="Advanced">Продвинутый</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="search-courses-btn">Поиск</button>
+                </div>
+            </div>
+
+            <!-- Список курсов -->
+            <div id="courses-list" class="row">
+            </div>
+            <nav aria-label="Курсы пагинация">
+                <ul class="pagination justify-content-center" id="courses-pagination">
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Репетиторы -->
+    <section id="tutors" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Наши репетиторы</h2>
+            
+            <!-- Форма поиска репетиторов -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Поиск репетиторов</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <select class="form-select" id="tutor-search-qualification">
+                                <option value="">Все квалификации</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <input type="number" class="form-control" id="tutor-search-experience" placeholder="Опыт (лет)" min="0">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="search-tutors-btn">Поиск</button>
+                </div>
+            </div>
+
+            <!-- Таблица репетиторов -->
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Имя</th>
+                            <th>Уровень</th>
+                            <th>Языки преподавания</th>
+                            <th>Опыт (лет)</th>
+                            <th>Ставка (руб./час)</th>
+                            <th>Действие</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tutors-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Карта учебных ресурсов -->
+    <section id="map" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Учебные ресурсы на карте</h2>
+            <div id="yandex-map" style="width: 100%; height: 500px;"></div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Контакты</h5>
+                    <p>Email: info@justlearnit.com<br>
+                    Телефон: +7 (495) 123-45-67</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Социальные сети</h5>
+                    <p>
+                        <a href="#" class="text-white me-3">Facebook</a>
+                        <a href="#" class="text-white me-3">Instagram</a>
+                        <a href="#" class="text-white">VK</a>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <small>&copy; 2025 JustLearnIt. Все права защищены.</small>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="courseModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="courseModalTitle">Оформление заявки</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="course-enrollment-form">
+                        <div class="mb-3">
+                            <label class="form-label">Название курса</label>
+                            <input type="text" class="form-control" id="course-name-display" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Преподаватель</label>
+                            <input type="text" class="form-control" id="course-teacher-display" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Дата начала курса</label>
+                            <select class="form-select" id="course-start-date" required>
+                                <option value="">Выберите дату</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Время занятий</label>
+                            <select class="form-select" id="course-start-time" required disabled>
+                                <option value="">Сначала выберите дату</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Продолжительность курса</label>
+                            <input type="text" class="form-control" id="course-duration-display" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Количество студентов в группе (1-20)</label>
+                            <input type="number" class="form-control" id="course-students-number" min="1" max="20" value="1" required>
+                        </div>
+                        
+                        <!-- Автоматические параметры -->
+                        <div id="automatic-options" class="mb-3"></div>
+                        
+                        <!-- Дополнительные опции -->
+                        <div class="mb-3">
+                            <label class="form-label">Дополнительные опции</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="opt-supplementary">
+                                <label class="form-check-label" for="opt-supplementary">
+                                    Дополнительные учебные материалы (+2000 руб. за студента)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="opt-personalized">
+                                <label class="form-check-label" for="opt-personalized">
+                                    Индивидуальные занятия (+1500 руб. за неделю)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="opt-excursions">
+                                <label class="form-check-label" for="opt-excursions">
+                                    Культурные экскурсии (+25% к стоимости)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="opt-assessment">
+                                <label class="form-check-label" for="opt-assessment">
+                                    Оценка уровня владения языком (+300 руб.)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="opt-interactive">
+                                <label class="form-check-label" for="opt-interactive">
+                                    Доступ к интерактивной онлайн-платформе (+50% к стоимости)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <strong>Общая стоимость: <span id="total-cost">0</span> руб.</strong>
+                        </div>
+
+                        <input type="hidden" id="selected-course-id">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" id="submit-course-enrollment">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="tutorModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Запрос на занятие с репетитором</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="tutor-request-form">
+                        <div class="mb-3">
+                            <label class="form-label">Имя репетитора</label>
+                            <input type="text" class="form-control" id="tutor-name-display" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Дата начала</label>
+                            <input type="date" class="form-control" id="tutor-date-start" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Время начала</label>
+                            <input type="time" class="form-control" id="tutor-time-start" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Продолжительность (часов, 1-40)</label>
+                            <input type="number" class="form-control" id="tutor-duration" min="1" max="40" value="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Количество студентов (1-20)</label>
+                            <input type="number" class="form-control" id="tutor-students-number" min="1" max="20" value="1" required>
+                        </div>
+                        <div class="alert alert-info">
+                            <strong>Стоимость: <span id="tutor-total-cost">0</span> руб.</strong>
+                        </div>
+                        <input type="hidden" id="selected-tutor-id">
+                        <input type="hidden" id="tutor-price-per-hour">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" id="submit-tutor-request">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU" type="text/javascript"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
